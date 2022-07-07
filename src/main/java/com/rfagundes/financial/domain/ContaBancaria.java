@@ -1,7 +1,6 @@
 package com.rfagundes.financial.domain;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Objects;
 
 import javax.persistence.Entity;
@@ -22,7 +21,7 @@ public class ContaBancaria implements Serializable {
 	private Integer id;
 	private String tipo;
 	private String numero;
-	private BigDecimal saldo;
+	private Double saldo;
 
 	@ManyToOne
 	@JoinColumn(name="categoria_id")
@@ -32,7 +31,7 @@ public class ContaBancaria implements Serializable {
 		super();
 	}
 
-	public ContaBancaria(Integer id, String tipo, String numero, BigDecimal saldo, Categoria categoria) {
+	public ContaBancaria(Integer id, String tipo, String numero, Double saldo, Categoria categoria) {
 		super();
 		this.id = id;
 		this.tipo = tipo;
@@ -65,11 +64,11 @@ public class ContaBancaria implements Serializable {
 		this.numero = numero;
 	}
 
-	public BigDecimal getSaldo() {
+	public Double getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(BigDecimal saldo) {
+	public void setSaldo(Double saldo) {
 		this.saldo = saldo;
 	}
 
